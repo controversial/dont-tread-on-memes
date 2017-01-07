@@ -21,11 +21,16 @@ After cloning the repository, you can run `python3 -m dont_tread_on_memes` from 
 ```
 Usage: __main__.py [OPTIONS]
 
+  Create a Don't Tread on Meme — an image of the Gadsden flag with the words
+  "DONT TREAD ON ME" replaced by something else.
+
 Options:
-  --message TEXT  The word or phrase to substitute for 'tread' in 'don't tread
-                  on me'
-  --save TEXT     Where to save the image
-  --help          Show this message and exit.
+  --message <caption>     A message to use as a caption for the flag
+  --format / --no-format  Whether to format the provided message as 'Don't
+                          <caption> me' (default) or to use the provided
+                          message as the entire caption.
+  --save TEXT             Where to save the image
+  --help                  Show this message and exit.
 ```
 
 If `--message` is omitted, the user will be prompted to provide a message. If `--save` is omitted, the image will be displayed using PIL's `PIL.ImageShow` module.
