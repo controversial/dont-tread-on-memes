@@ -15,7 +15,8 @@ def tread_on(phrase):
     draw = ImageDraw.Draw(flag)
     font = ImageFont.truetype("Times New Roman", 120)
 
-    text = "Don't {} me".format(phrase)
+    text = "don't {} me".format(phrase).upper()
+
     font_pos = (flag.width / 2 - font.getsize(text)[0] / 2, 1088)
 
     draw.text(font_pos, text, font=font, fill="black")
