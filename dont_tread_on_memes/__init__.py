@@ -4,8 +4,10 @@ import os
 
 from PIL import Image, ImageDraw, ImageFont
 
-BLANK_FLAG = Image.open(
-    os.path.join(os.path.dirname(__file__), "dont-tread-on-blank.png")
+localdir = os.path.dirname(__file__)
+BLANK_FLAG = Image.open(os.path.join(localdir, "dont-tread-on-blank.png"))
+LORA_FONT = ImageFont.truetype(
+    os.path.join(localdir, "../fonts/Lora-Regular.ttf"), 120
 )
 
 
@@ -13,13 +15,12 @@ def tread_on(caption):
     """Caption the "Don't Tread on Me" snake with `caption`"""
     flag = BLANK_FLAG.copy()
     draw = ImageDraw.Draw(flag)
-    font = ImageFont.truetype("Times New Roman", 120)
 
     text = caption.upper()
 
-    font_pos = (flag.width / 2 - font.getsize(text)[0] / 2, 1088)
+    font_pos = (flag.width / 2 - LORA_FONT.getsize(text)[0] / 2, 1088)
 
-    draw.text(font_pos, text, font=font, fill="black")
+    draw.text(font_pos, text, font=LORA_FONT, fill="black")
 
     return flag
 
