@@ -3,7 +3,7 @@ import click
 
 
 @click.command()
-@click.option("--message", prompt="Don't _____ me: ",
+@click.option("--message", prompt="Don't _____ me",
               help=("The word or phrase to substitute for 'tread' in 'don't "
                     "tread on me'"))
 @click.option("--save", default=None, help="Where to save the image")
