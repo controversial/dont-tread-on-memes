@@ -25,6 +25,6 @@ def tread_on(caption, color="black"):
     return flag
 
 
-def dont_me(phrase):
+def dont_me(phrase, *args, **kwargs):
     """Caption the "Don't tread on me" flag with "Don't [phrase] me" """
-    return tread_on("don't {} me".format(phrase))
+    return tread_on("don't {} me".format(phrase), *args, **kwargs)
