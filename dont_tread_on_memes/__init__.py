@@ -11,7 +11,7 @@ LORA_FONT = ImageFont.truetype(
 )
 
 
-def tread_on(caption):
+def tread_on(caption, color="black"):
     """Caption the "Don't Tread on Me" snake with `caption`"""
     flag = BLANK_FLAG.copy()
     draw = ImageDraw.Draw(flag)
@@ -20,7 +20,7 @@ def tread_on(caption):
 
     font_pos = (flag.width / 2 - LORA_FONT.getsize(text)[0] / 2, 1088)
 
-    draw.text(font_pos, text, font=LORA_FONT, fill="black")
+    draw.text(font_pos, text, font=LORA_FONT, fill=color)
 
     return flag
 
