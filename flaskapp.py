@@ -11,10 +11,7 @@ app = flask.Flask(__name__)
 @app.route("/<caption>/")
 def main(caption):
     # Color argument
-    color = flask.request.args.get("color")
-    if color is None:
-        color = "black"
-
+    color = flask.request.args.get("color") or "black"
     # Allow disabling of formatting
     should_format = flask.request.args.get("format")
     if should_format == "false":
